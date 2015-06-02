@@ -1,0 +1,10 @@
+plugin.tx_koningcookiecontrol {
+    view {
+        # cat=plugin.tx_koningcookiecontrol/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:koning_cookie_control/Resources/Private/Templates
+        # cat=plugin.tx_koningcookiecontrol/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:koning_cookie_control/Resources/Private/Layouts
+        # cat=plugin.tx_koningcookiecontrol/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:koning_cookie_control/Resources/Private/Partials
+    }
+}

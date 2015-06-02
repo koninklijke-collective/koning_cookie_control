@@ -1,0 +1,37 @@
+{
+    "name": "typo3cms/koning_cookie_control",
+    "description": "TYPO3 Extension: Advanced cookie control extension with enabled/disabled callbacks",
+    "type": "typo3-cms-extension",
+
+    "keywords": [
+        "TYPO3",
+        "CMS",
+        "Koning",
+        "Cookie",
+        "Cookie Control",
+        "Law"
+    ],
+    "homepage": "https://github.com/GrandSlamMediaNL/koning_cookie_control",
+    "license": "LGPL-3.0+",
+
+    "version": "1.0.0",
+
+    "authors": [
+        {
+            "name": "Jesper Paardekooper",
+            "email": "j.paardekooper@grandslam-media.nl",
+            "homepage": "http://grandslam-media.nl"
+        },
+        {
+            "name": "Benjamin Serfhos",
+            "email": "benjamin@serfhos.com",
+            "homepage": "http://serfhos.com"
+        }
+    ],
+
+    "require": {
+        "composer/installers": "~1.0"
+    },
+
+    "minimum-stability": "dev"
+}

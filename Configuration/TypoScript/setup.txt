@@ -1,0 +1,44 @@
+plugin.tx_koningcookiecontrol {
+    view {
+        templateRootPath >
+        templateRootPaths {
+            10 = {$plugin.tx_koningcookiecontrol.view.templateRootPath}
+        }
+
+        layoutRootPath >
+        layoutRootPath {
+            10 = {$plugin.tx_koningcookiecontrol.view.layoutRootPath}
+        }
+
+        partialRootPath >
+        partialRootPaths {
+            10 = {$plugin.tx_koningcookiecontrol.view.partialRootPath}
+        }
+    }
+
+    settings {
+        callBacks {
+            enabled {
+                10 = KoningCookieControl.addAnalytics
+            }
+
+            disabled {
+
+            }
+        }
+    }
+}
+
+lib.koningCookieControlPlugin = USER
+lib.koningCookieControlPlugin {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    pluginName = Show
+    extensionName = KoningCookieControl
+    vendorName = Keizer
+    controller = Cookie
+    switchableControllerActions {
+        Cookie {
+            1 = show
+        }
+    }
+}

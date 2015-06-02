@@ -1,0 +1,28 @@
+<f:layout name="Default" />
+
+<f:section name="Content">
+    <div class="button"></div>
+    <div class="widget">
+        <div class="title"><f:translate id="widget.title" /></div>
+        <div class="content">
+            <p><f:format.nl2br><f:translate id="widget.text" /></f:format.nl2br></p>
+            <span><f:translate id="widget.one_cookie" /></span>
+        </div>
+        <div class="toggler">
+            <a href="#">
+                <span class="on"><f:translate id="widget.cookies.on" /></span>
+                <span class="off"><f:translate id="widget.cookies.off" /></span>
+            </a>
+        </div>
+        <button class="close-widget"></button>
+    </div>
+    <script type="text/javascript">
+        <f:for each="{settings.callBacks.enabled}" as="callback">
+            KoningCookieControl.callBacks.enabled.push({callback});
+        </f:for>
+        <f:for each="{settings.callBacks.disabled}" as="callback">
+            KoningCookieControl.callBacks.disabled.push({callback});
+        </f:for>
+        KoningCookieControl.init();
+    </script>
+</f:section>
