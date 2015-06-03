@@ -34,31 +34,34 @@ KoningCookieControl = {
      * @return void
      */
     init: function () {
-        jQuery('.tx-koning-cookie-control .button').click(function () {
-            KoningCookieControl.toggleWidget();
-        });
-
-        jQuery('.tx-koning-cookie-control .widget .close-widget').click(function () {
-            KoningCookieControl.toggleWidget();
-        });
-
-        KoningCookieControl.getAllowCookies(function () {
-            KoningCookieControl.toggleTogglerOptions(function () {
-                if (KoningCookieControl.firstVisit) {
-                    jQuery('.tx-koning-cookie-control .button').trigger('click');
-                }
-                KoningCookieControl.runCallBacks();
+        var container = jQuery('.koning-cookie-control');
+        if (container.length > 0) {
+            container.find('.toggle-widget').click(function (e) {
+                e.preventDefault();
+                KoningCookieControl.toggleWidget();
             });
-        });
 
-        jQuery('.tx-koning-cookie-control .widget .toggler a').click(function () {
-            KoningCookieControl.setAllowCookies(function () {
+            KoningCookieControl.getAllowCookies(function () {
                 KoningCookieControl.toggleTogglerOptions(function () {
-                    jQuery('.tx-koning-cookie-control .widget .close-widget').trigger('click');
+                    KoningCookieControl.hideWidget();
+
+                    if (KoningCookieControl.firstVisit) {
+                        KoningCookieControl.showWidget();
+                    }
+
+                    KoningCookieControl.runCallBacks();
                 });
             });
-            return false;
-        });
+
+            container.find('.cookie-toggle').click(function () {
+                KoningCookieControl.setAllowCookies(function () {
+                    KoningCookieControl.toggleTogglerOptions(function () {
+                        KoningCookieControl.hideWidget();
+                    });
+                });
+                return false;
+            });
+        }
     },
 
     /**
@@ -85,11 +88,30 @@ KoningCookieControl = {
      * @return void
      */
     toggleWidget: function () {
-        if (jQuery('.tx-koning-cookie-control .widget').is(':visible')) {
-            jQuery('.tx-koning-cookie-control .widget').fadeOut(800);
+        var content = jQuery('.koning-cookie-control .cookie-content-container');
+        if (content.is(':visible')) {
+            KoningCookieControl.hideWidget();
         } else {
-            jQuery('.tx-koning-cookie-control .widget').fadeIn(800);
+            KoningCookieControl.showWidget();
         }
+    },
+
+    /**
+     * Hides the Cookie widget
+     *
+     * @return void
+     */
+    hideWidget: function () {
+        jQuery('.koning-cookie-control .cookie-content-container').fadeOut(800);
+    },
+
+    /**
+     * Show the Cookie widget
+     *
+     * @return void
+     */
+    showWidget: function () {
+        jQuery('.koning-cookie-control .cookie-content-container').fadeIn(800);
     },
 
     /**
@@ -99,14 +121,15 @@ KoningCookieControl = {
      * @return void
      */
     toggleTogglerOptions: function (callback) {
+        var container = jQuery('.koning-cookie-control');
         if (KoningCookieControl.allowCookies) {
-            jQuery('.tx-koning-cookie-control .widget span.on').show();
-            jQuery('.tx-koning-cookie-control .widget span.off').hide();
-            jQuery('.tx-koning-cookie-control .widget .toggler a').addClass('on').removeClass('off');
+            container.find('.cookie-toggle.on').show();
+            container.find('.cookie-toggle.off').hide();
+            container.find('.cookie-toggles').addClass('on').removeClass('off');
         } else {
-            jQuery('.tx-koning-cookie-control .widget span.on').hide();
-            jQuery('.tx-koning-cookie-control .widget span.off').show();
-            jQuery('.tx-koning-cookie-control .widget .toggler a').removeClass('on').addClass('off');
+            container.find('.cookie-toggle.on').hide();
+            container.find('.cookie-toggle.off').show();
+            container.find('.cookie-toggles').removeClass('on').addClass('off');
         }
 
         if (callback) {
@@ -144,7 +167,7 @@ KoningCookieControl = {
             data: {
                 allowCookies: (KoningCookieControl.allowCookies) ? 0 : 1
             },
-            success: function (response) {
+            success: function () {
                 KoningCookieControl.allowCookies = !KoningCookieControl.allowCookies;
                 callback();
             }

@@ -3,6 +3,9 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2015-05-12T09:49:32Z" product-name="koning_cookie_control">
         <header/>
         <body>
+            <trans-unit id="widget.button">
+                <source>Cookie Control</source>
+            </trans-unit>
             <trans-unit id="widget.title">
                 <source>Cookie Control</source>
             </trans-unit>
@@ -17,6 +20,9 @@
             </trans-unit>
             <trans-unit id="widget.cookies.off">
                 <source>Cookies are off</source>
+            </trans-unit>
+            <trans-unit id="widget.close">
+                <source>Close</source>
             </trans-unit>
         </body>
     </file>

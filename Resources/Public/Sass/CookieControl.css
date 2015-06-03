@@ -1,66 +1,68 @@
-.tx-koning-cookie-control .button {
+.koning-cookie-control .icon {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  color: transparent; }
+.koning-cookie-control .cookie-button {
+  position: fixed;
   right: 5px;
   bottom: 5px;
-  z-index: 9999;
-  display: block;
-  position: fixed;
-  width: 49px;
-  height: 50px;
-  background: url(../Images/icon.png) no-repeat top left;
-  cursor: pointer;
-  border: 1px solid #eee; }
-.tx-koning-cookie-control .widget {
+  z-index: 4;
+  border: 1px solid #E5E5E5;
+  background: #FFF;
+  cursor: pointer; }
+  .koning-cookie-control .cookie-button .icon {
+    width: 50px;
+    height: 50px;
+    background: url("../Images/icon.png") no-repeat; }
+.koning-cookie-control .cookie-content-container {
   display: none;
   position: fixed;
-  z-index: 9999;
   bottom: 5px;
   right: 5px;
-  width: 310px;
-  border: 1px solid #f6f6f6;
-  background: #fff;
+  z-index: 9;
+  max-width: 325px;
+  background: #FFF;
+  border: 1px solid #E5E5E5;
   padding: 20px; }
-  .tx-koning-cookie-control .widget .title {
-    font-size: 21px;
-    line-height: 30px;
-    font-weight: 300;
-    padding-bottom: 10px;
-    padding-right: 20px; }
-  .tx-koning-cookie-control .widget .content {
-    padding: 0;
-    font-size: 15px;
-    line-height: 25px;
-    color: #111; }
-    .tx-koning-cookie-control .widget .content p {
-      margin-bottom: 10px;
-      text-align: justify; }
-    .tx-koning-cookie-control .widget .content span {
-      font-size: 10px;
-      text-align: right;
-      display: inline-block;
-      width: 100%; }
-  .tx-koning-cookie-control .widget .toggler {
+  .koning-cookie-control .cookie-content-container .cookie-title {
+    font-size: 140%; }
+  .koning-cookie-control .cookie-content-container .cookie-message {
+    margin: 10px 0;
+    text-align: justify; }
+  .koning-cookie-control .cookie-content-container .cookie-muted {
+    color: #AAA;
+    font-size: 10px;
     text-align: right; }
-    .tx-koning-cookie-control .widget .toggler a {
-      background: #9d261d;
+  .koning-cookie-control .cookie-content-container .cookie-toggler {
+    text-align: right; }
+    .koning-cookie-control .cookie-content-container .cookie-toggler .cookie-toggle {
       display: inline-block;
       font-size: 14px;
       font-weight: bold;
-      line-height: 38px;
+      line-height: 40px;
       text-transform: uppercase;
-      color: #fff; }
-      .tx-koning-cookie-control .widget .toggler a.on {
-        background: #45a546; }
-      .tx-koning-cookie-control .widget .toggler a span {
-        padding: 5px 15px; }
-  .tx-koning-cookie-control .widget button.close-widget {
-    background: url(../Images/close.png) no-repeat top left;
-    width: 16px;
-    height: 15px;
+      padding: 5px 15px;
+      cursor: pointer; }
+      .koning-cookie-control .cookie-content-container .cookie-toggler .cookie-toggle.on {
+        background: #dff0d8;
+        color: #468847;
+        border: 1px solid #d6e9c6; }
+      .koning-cookie-control .cookie-content-container .cookie-toggler .cookie-toggle.off {
+        background: #f2dede;
+        color: #b94a48;
+        border: 1px solid #eed3d7; }
+  .koning-cookie-control .cookie-content-container .close-widget {
     position: absolute;
     right: 20px;
     top: 20px;
     border: none;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    cursor: pointer; }
+    .koning-cookie-control .cookie-content-container .close-widget .icon {
+      width: 16px;
+      height: 15px;
+      background: url("../Images/close.png") no-repeat; }
 
 /*# sourceMappingURL=CookieControl.css.map */
