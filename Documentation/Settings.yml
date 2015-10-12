@@ -6,6 +6,6 @@
 conf.py:
   copyright: 2014-2015
   project: KoningCookieControl
-  version: 1.0.0
-  release: 1.0.0
+  version: 1.0.1
+  release: 1.0.1
 ...
