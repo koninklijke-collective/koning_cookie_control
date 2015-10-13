@@ -16,7 +16,7 @@ EXT: Cookie Control
     koning_cookie_control
 
 :Version:
-    1.0.1
+    |version|
 
 :Language:
     en
