@@ -1,5 +1,5 @@
 {
-    "name": "typo3cms/koning-cookie-control",
+    "name": "grandslam/koning-cookie-control",
     "description": "TYPO3 Extension: Advanced cookie control extension with enabled/disabled callbacks",
     "type": "typo3-cms-extension",
 
