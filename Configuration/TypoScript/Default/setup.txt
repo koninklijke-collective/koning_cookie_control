@@ -6,7 +6,7 @@ plugin.tx_koningcookiecontrol {
         }
 
         layoutRootPath >
-        layoutRootPath {
+        layoutRootPaths {
             10 = {$plugin.tx_koningcookiecontrol.view.layoutRootPath}
         }
 
