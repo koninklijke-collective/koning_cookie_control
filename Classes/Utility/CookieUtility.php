@@ -58,7 +58,7 @@ class CookieUtility
         $firstVisit = true;
         if (isset($_COOKIE[static::$cookieKey])) {
             $firstVisit = false;
-            if ($_COOKIE[static::$cookieKey] === false) {
+            if ((bool) $_COOKIE[static::$cookieKey] === false) {
                 $allowCookies = false;
             }
         } else {
