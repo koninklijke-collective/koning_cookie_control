@@ -22,9 +22,27 @@ class CookieUtility
      */
     public static function set(array $request)
     {
-        if (isset($request['allowCookies']) && in_array((int) $request['allowCookies'], array(0, 1))) {
-            $expirationDate = strtotime('+3 months');
-            return setcookie(self::$cookieKey, (int) $request['allowCookies'], $expirationDate);
+        if (isset($request['allowCookies'])) {
+            $parameters = array(
+                'allowCookies' => filter_var($request['allowCookies'], FILTER_VALIDATE_BOOLEAN),
+                'expire' => strtotime('+3 months'),
+                'path' => null,
+                'domain' => null,
+                'secure' => null,
+                'httpOnly' => null,
+            );
+
+            $parameters = static::handleSignal('set', $parameters);
+
+            setcookie(
+                static::$cookieKey,
+                $parameters['allowCookies'],
+                $parameters['expire'],
+                $parameters['path'],
+                $parameters['domain'],
+                $parameters['secure'],
+                $parameters['httpOnly']
+            );
         }
         return false;
     }
@@ -38,14 +56,32 @@ class CookieUtility
     {
         $allowCookies = true;
         $firstVisit = true;
-        if (isset($_COOKIE[self::$cookieKey])) {
+        if (isset($_COOKIE[static::$cookieKey])) {
             $firstVisit = false;
-            if ((int) $_COOKIE[self::$cookieKey] === 0) {
+            if ($_COOKIE[static::$cookieKey] === false) {
                 $allowCookies = false;
             }
         } else {
-            self::set(array('allowCookies' => 1));
+            static::set(array('allowCookies' => $allowCookies));
         }
-        return array('allowCookies' => $allowCookies, 'firstVisit' => $firstVisit);
+
+        $parameters = static::handleSignal('get', array('allowCookies' => $allowCookies, 'firstVisit' => $firstVisit));
+
+        return $parameters;
     }
+
+    /**
+     * Default signal handler for cookie control
+     *
+     * @param string $method
+     * @param array $arguments
+     * @return array
+     */
+    public static function handleSignal($method, $arguments)
+    {
+        /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $dispatcher */
+        $dispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\SignalSlot\Dispatcher');
+        return $dispatcher->dispatch('Keizer\KoningCookieControl\Utility\CookieUtility', $method, $arguments);
+    }
+
 }
