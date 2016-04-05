@@ -77,7 +77,7 @@ class CookieUtility
      * @param array $arguments
      * @return array
      */
-    public static function handleSignal($method, $arguments)
+    protected static function handleSignal($method, $arguments)
     {
         /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $dispatcher */
         $dispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\SignalSlot\Dispatcher');
