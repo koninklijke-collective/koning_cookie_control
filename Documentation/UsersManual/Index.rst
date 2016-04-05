@@ -49,31 +49,30 @@ my_personal_cookies.js
          * @return void
          */
         addGoogleAnalytics: function() {
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-XXXXXXX-XX']);
-            _gaq.push(['_trackPageview']);
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            var _ga_src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-            jQuery.getScript(_ga_src, function () {
-                var GATracker = _gat._createTracker('###ACCOUNT###');
-                GATracker._trackPageview();
-            });
+            ga('create', 'UA-XXXXXX-X', 'auto');
+            ga('send', 'pageview');
         },
 
         /**
          * @return void
          */
         addPiwik: function() {
-            var piwikUrl = 'YourPiwikUrl';
+            (function (f, d) {
+                f._paq = f._paq || [];
+                f._paq.push(['trackPageView']);
+                f._paq.push(['enableLinkTracking']);
 
-            var _paq = _paq || [];
-            (function(){ var u=(("https:" == document.location.protocol) ? "https://"+piwikUrl+"/" : "http://"+piwikUrl+"/");
-            _paq.push(['setSiteId', 'UA-XXXXXX-XX']);
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
-            s.parentNode.insertBefore(g,s); })();
+                var u="//{$PIWIK_URL}/";
+                f._paq.push(['setTrackerUrl', u+'piwik.php']);
+                f._paq.push(['setSiteId', {$IDSITE}]);
+                var g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+            })(window, document);
         }
     };
 
@@ -114,7 +113,7 @@ See: EXT:koning_cookie_control/Configuration/TypoScript/PageIncludes/setup.txt
 
     page {
         includeCSS {
-            koning_cookie_control = EXT:koning_cookie_control/Resources/Public/Sass/CookieControl.css
+            koning_cookie_control = EXT:koning_cookie_control/Resources/Public/Styles/CookieControl.css
         }
 
         includeJSlibs {
@@ -126,7 +125,7 @@ See: EXT:koning_cookie_control/Configuration/TypoScript/PageIncludes/setup.txt
                 excludeFromConcatenation = 1
             }
 
-            koning_cookie_control = EXT:koning_cookie_control/Resources/Public/JavaScript/CookieControl.js
+            koning_cookie_control = EXT:koning_cookie_control/Resources/Public/JavaScripts/CookieControl.js
             koning_cookie_control.forceOnTop = 1
         }
 

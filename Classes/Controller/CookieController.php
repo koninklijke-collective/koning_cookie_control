@@ -2,7 +2,7 @@
 namespace Keizer\KoningCookieControl\Controller;
 
 /**
- * Cookie controller
+ * Controller: Cookie
  *
  * @package Keizer\KoningCookieControl\Controller
  */
@@ -17,4 +17,5 @@ class CookieController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     public function showAction()
     {
     }
+
 }
