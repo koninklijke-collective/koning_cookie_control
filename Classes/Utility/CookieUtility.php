@@ -2,7 +2,7 @@
 namespace Keizer\KoningCookieControl\Utility;
 
 /**
- * Cookie utility
+ * Utility: Cookie getters & setters
  *
  * @package Keizer\KoningCookieControl\Utility
  */

@@ -33,11 +33,5 @@
             "email": "benjamin@serfhos.com",
             "homepage": "http://serfhos.com"
         }
-    ],
-
-    "require": {
-        "composer/installers": "~1.0"
-    },
-
-    "minimum-stability": "dev"
+    ]
 }

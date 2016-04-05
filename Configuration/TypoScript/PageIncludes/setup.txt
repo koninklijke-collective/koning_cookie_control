@@ -1,10 +1,10 @@
 page {
     includeCSS {
-        koning_cookie_control = EXT:koning_cookie_control/Resources/Public/Sass/CookieControl.css
+        koning_cookie_control = EXT:koning_cookie_control/Resources/Public/Styles/CookieControl.css
     }
 
     includeJSlibs {
-        jquery = //code.jquery.com/jquery-1.10.2.min.js
+        jquery = //code.jquery.com/jquery-1.12.2.min.js
         jquery {
             external = 1
             forceOnTop = 1
@@ -12,11 +12,11 @@ page {
             excludeFromConcatenation = 1
         }
 
-        koning_cookie_control = EXT:koning_cookie_control/Resources/Public/JavaScript/CookieControl.js
+        koning_cookie_control = EXT:koning_cookie_control/Resources/Public/JavaScripts/CookieControl.js
         koning_cookie_control.forceOnTop = 1
     }
 
     footerData {
-        10 < lib.koningCookieControlPlugin
+        10 < tt_content.list.20.koningcookiecontrol_show
     }
 }

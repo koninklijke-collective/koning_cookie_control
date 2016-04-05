@@ -1,16 +1,13 @@
 plugin.tx_koningcookiecontrol {
     view {
-        templateRootPath >
         templateRootPaths {
             10 = {$plugin.tx_koningcookiecontrol.view.templateRootPath}
         }
 
-        layoutRootPath >
         layoutRootPaths {
             10 = {$plugin.tx_koningcookiecontrol.view.layoutRootPath}
         }
 
-        partialRootPath >
         partialRootPaths {
             10 = {$plugin.tx_koningcookiecontrol.view.partialRootPath}
         }
@@ -29,16 +26,5 @@ plugin.tx_koningcookiecontrol {
     }
 }
 
-lib.koningCookieControlPlugin = USER
-lib.koningCookieControlPlugin {
-    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-    pluginName = Show
-    extensionName = KoningCookieControl
-    vendorName = Keizer
-    controller = Cookie
-    switchableControllerActions {
-        Cookie {
-            1 = show
-        }
-    }
-}
+# Define legacy library
+lib.koningCookieControlPlugin < tt_content.list.20.koningcookiecontrol_show

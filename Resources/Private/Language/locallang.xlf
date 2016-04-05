@@ -3,25 +3,25 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2015-05-12T09:49:32Z" product-name="koning_cookie_control">
         <header/>
         <body>
-            <trans-unit id="widget.button">
+            <trans-unit id="button">
                 <source>Cookie Control</source>
             </trans-unit>
-            <trans-unit id="widget.title">
+            <trans-unit id="title">
                 <source>Cookie Control</source>
             </trans-unit>
-            <trans-unit id="widget.text">
+            <trans-unit id="text">
                 <source>Some cookies on this site are essential, and the site won't work as expected without them. These cookies are set when you submit a form, login or interact with the site by doing something that goes beyond clicking on simple links. We also use some non-essential cookies to anonymously track visitors or enhance your experience of the site. If you're not happy with this, we won't set these cookies but some nice features of the site may be unavailable.</source>
             </trans-unit>
-            <trans-unit id="widget.one_cookie">
+            <trans-unit id="one_cookie">
                 <source>(One cookie will be set to store your preference)</source>
             </trans-unit>
-            <trans-unit id="widget.cookies.on">
+            <trans-unit id="cookies_on">
                 <source>Cookies are on</source>
             </trans-unit>
-            <trans-unit id="widget.cookies.off">
+            <trans-unit id="cookies_off">
                 <source>Cookies are off</source>
             </trans-unit>
-            <trans-unit id="widget.close">
+            <trans-unit id="close">
                 <source>Close</source>
             </trans-unit>
         </body>
