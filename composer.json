@@ -1,5 +1,5 @@
 {
-    "name": "grandslam/koning-cookie-control",
+    "name": "koninklijke-collective/koning-cookie-control",
     "description": "TYPO3 Extension: Advanced cookie control extension with enabled/disabled callbacks",
     "type": "typo3-cms-extension",
 
@@ -11,7 +11,7 @@
         "Cookie Control",
         "Law"
     ],
-    "homepage": "https://github.com/GrandSlamMediaNL/koning_cookie_control",
+    "homepage": "https://github.com/koninklijke-collective/koning_cookie_control",
     "license": "LGPL-3.0+",
 
     "autoload": {
