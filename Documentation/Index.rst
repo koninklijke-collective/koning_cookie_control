@@ -28,7 +28,7 @@ EXT: Cookie Control
     Generic TYPO3 Cookie Control
 
 :Copyright:
-    2014-2015
+    2014-2016
 
 :Author:
     Jesper Paardekooper and Benjamin Serfhos
@@ -37,7 +37,7 @@ EXT: Cookie Control
     2014-12-30
 
 :Changed:
-    2015-06-02
+    2016-04-12
 
 :Email:
     info@grandslam-media.nl
