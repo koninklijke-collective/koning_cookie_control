@@ -9,4 +9,8 @@ plugin.tx_koningcookiecontrol {
         # cat=plugin.tx_koningcookiecontrol/file; type=string; label=Path to template partials (FE)
         partialRootPath = EXT:koning_cookie_control/Resources/Private/Partials
     }
+    settings {
+        # cat=plugin.tx_koningcookiecontrol/enable; type=boolean; label=Option to disable toggle widget in template
+        hideToggleWidget = 0
+    }
 }
