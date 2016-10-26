@@ -14,6 +14,7 @@ plugin.tx_koningcookiecontrol {
     }
 
     settings {
+        hideToggleWidget = {$plugin.tx_koningcookiecontrol.settings.hideToggleWidget}
         callBacks {
             enabled {
                 10 = KoningCookieControl.addAnalytics

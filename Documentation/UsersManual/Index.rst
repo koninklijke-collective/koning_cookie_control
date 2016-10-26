@@ -102,6 +102,20 @@ Add function as opt-in/opt-out functions
     }
 
 
+Disable toggle button from display
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sometimes you need to render the scripts, but not display the toggle.
+Just configure the following configuration to skip the default button html but keep the javascript interaction
+
+::
+
+    plugin.tx_koningcookiecontrol {
+        settings {
+            hideToggleWidget = 1
+        }
+    }
+
+
 .. _page_includes:
 
 Manually include PAGE items

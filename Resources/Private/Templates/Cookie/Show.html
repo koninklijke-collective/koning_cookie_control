@@ -1,33 +1,38 @@
 <f:layout name="Default" />
 
 <f:section name="Content">
-    <div class="cookie-button toggle-widget">
-        <i class="icon action-settings">
-            <span><f:translate id="button"/></span>
-        </i>
-    </div>
-    <div class="cookie-content-container">
-        <div class="cookie-title">
-            <f:translate id="title"/>
-        </div>
-        <div class="cookie-content">
-            <div class="cookie-message">
-                {f:translate(key: 'text') -> f:format.nl2br()}
+    <f:if condition="{settings.hideToggleWidget}">
+        <f:else>
+            <div class="cookie-button toggle-widget">
+                <i class="icon action-settings">
+                    <span><f:translate id="button"/></span>
+                </i>
             </div>
-            <div class="cookie-muted muted"><f:translate id="one_cookie"/></div>
-        </div>
-        <div class="cookie-toggler">
-            <span class="cookie-toggles">
-                <span class="cookie-toggle on"><f:translate id="cookies_on"/></span>
-                <span class="cookie-toggle off"><f:translate id="cookies_off"/></span>
-            </span>
-        </div>
-        <div class="close-widget toggle-widget">
-            <i class="icon action-close">
-                <span><f:translate id="close"/></span>
-            </i>
-        </div>
-    </div>
+            <div class="cookie-content-container">
+                <div class="cookie-title">
+                    <f:translate id="title"/>
+                </div>
+                <div class="cookie-content">
+                    <div class="cookie-message">
+                        {f:translate(key: 'text') -> f:format.nl2br()}
+                    </div>
+                    <div class="cookie-muted muted"><f:translate id="one_cookie"/></div>
+                </div>
+                <div class="cookie-toggler">
+                    <span class="cookie-toggles">
+                        <span class="cookie-toggle on"><f:translate id="cookies_on"/></span>
+                        <span class="cookie-toggle off"><f:translate id="cookies_off"/></span>
+                    </span>
+                </div>
+                <div class="close-widget toggle-widget">
+                    <i class="icon action-close">
+                        <span><f:translate id="close"/></span>
+                    </i>
+                </div>
+            </div>
+        </f:else>
+    </f:if>
+
     <script type="text/javascript">
         <f:render section="CallBacks" arguments="{callBacks: settings.callBacks}"/>
     </script>
