@@ -36,7 +36,7 @@ class CookieUtility
 
             setcookie(
                 static::$cookieKey,
-                $parameters['allowCookies'],
+                (int)$parameters['allowCookies'],
                 $parameters['expire'],
                 $parameters['path'],
                 $parameters['domain'],
