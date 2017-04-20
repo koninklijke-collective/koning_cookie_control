@@ -40,7 +40,7 @@ EXT: Cookie Control
     2016-04-12
 
 :Email:
-    info@grandslam-media.nl
+    info@develement.nl
 
 :License:
     GNU General Public License available from `www.gnu.org/licenses/gpl-2.0.html <http://www.gnu.org/licenses/gpl-2.0.html>`_
