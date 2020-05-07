@@ -1,4 +1,5 @@
 {
+    "abandoned": true,
     "name": "koninklijke-collective/koning-cookie-control",
     "description": "TYPO3 Extension: Advanced cookie control extension with enabled/disabled callbacks",
     "type": "typo3-cms-extension",
@@ -19,12 +20,13 @@
             "Keizer\\KoningCookieControl\\": "Classes/"
         }
     },
-
-    "require": {
-        "typo3/cms-core": ">=6.2.6,<9.0"
+    "replace": {
+        "typo3-ter/koning-cookie-control": "self.version"
     },
 
-    "version": "1.2.1",
+    "require": {
+        "typo3/cms-core": ">=6.2.6"
+    },
 
     "authors": [
         {
